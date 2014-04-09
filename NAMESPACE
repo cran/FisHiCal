@@ -1,0 +1,4 @@
+useDynLib(FisHiCal)
+import(igraph, RcppArmadillo)
+export("prepareData", "prepareCalib", "calibrate", "lsmacof", "searchInc", "plotInc", "summaryInc")
+
