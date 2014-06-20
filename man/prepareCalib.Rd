@@ -7,7 +7,7 @@ Prepare Hi-C calibration
 A function to build a calibration function, by fitting a subset of FISH distances and Hi-C frequencies with a power law model (see details). The number of distances to fit (taking distances by increasing order) or a subset of selected distances should be provided by the user. Users can also choose how to estimate the distance threshold or may explicitly provide one. 
 }
 \usage{
-prepareCalib(data, npoints, threshold = NULL, useMax = TRUE, delta = 0.05)
+prepareCalib(data, npoints, threshold = NULL, useMax = TRUE, delta = 0.05, buffer = 1.0)
 }
 \arguments{
   \item{data}{
@@ -25,6 +25,9 @@ Optional Boolean, set to True by default and ignored if 'threshold' is given. Wh
 }
 \item{delta}{
 Optional numeric, set to 0.05 by default and ignored if 'threshold' is given or if 'useMax' is set to TRUE. Defines the acceptable deviation from the model, when the distance range threshold is estimated from the fit (see details).
+}
+\item{buffer}{
+Optional numeric, set to 1.0 by default and ignored if 'useMax' is set to FALSE. Defines a constant that is added to the threshold value when 'useMax' is set to TRUE. 
 }
 }
 

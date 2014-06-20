@@ -1,10 +1,10 @@
 \name{prepareData}
 \alias{prepareData}
 \title{
-Prepare FISH and Hi-C data for calibration
+Match FISH distances and Hi-C frequencies for calibration
 }
 \description{
-A function to match FISH and Hi-C data based on probe/bin coordinates, using mid-points. }
+A function to match FISH distances and Hi-C frequencies based on matching probe/bin coordinates. }
 \usage{
 prepareData(fish, fishCoord, hic, hicCoord)
 }
@@ -14,7 +14,7 @@ prepareData(fish, fishCoord, hic, hicCoord)
 A N*N matrix giving the pairwise FISH distances between the probes defined by fishCoord. Off-diagonal zero values stand for missing distances. 
 }
   \item{fishCoord}{
-The name and genomic coordinates of the N FISH probes. A data frame with the following columns: chr (chromosome name), start (start position), end (end position). Additional columns are permitted but will not be used.
+The genomic coordinates of the N FISH probes. A data frame with the following columns: chr (chromosome name), start (start position), end (end position). Additional columns are permitted but will not be used.
 Note that chromosome names should match between hicCoord and fishCoord.
 }
   \item{hic}{
@@ -26,6 +26,7 @@ Note that chromosome names should match between hicCoord and fishCoord.
 }
 }
 \details{
+This function calls \code{\link{findMatchingIndices}} in order to find matching Hi-C bins for FISH probes.
 When several FISH probes are mapped to the same  bin i, the FISH distances for this bin with another bin j are not unique.  In these cases the minimal non-zero FISH distance between i and j is taken as representative, in order to generate a unique match and since Hi-C is likely to be biased towards shorter distances. 
 }
 \value{

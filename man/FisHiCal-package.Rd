@@ -12,8 +12,8 @@ FisHiCal is an R package for combining Hi-C and FISH data, which offers a modula
 \tabular{ll}{
 Package: \tab FisHiCal\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2014-04-09\cr
+Version: \tab 1.1\cr
+Date: \tab 2014-06-20\cr
 License: \tab GPL \cr
 }
 FisHiCal implements the methods described in Shavit, Hamey and Lio' (2014) (submitted). Users can first prepare and apply their calibration with \code{\link{prepareData}}, \code{\link{prepareCalib}} and \code{\link{calibrate}} and use 3D inference functions (\code{\link{lsmacof}}, \code{\link{searchInc}}, \code{\link{plotInc}} and \code{\link{summaryInc}}) to spatially explore their data and further refine their calibration.

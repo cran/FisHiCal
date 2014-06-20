@@ -5,7 +5,7 @@
 A 3D random configuration of 100 points
 }
 \description{
-A numeric 100*3 matrix giving the 3D coordinates for each point. The configuration was generated as described in Shavit, Hamey and Lio' (2014), as part of in-silico evaluation.
+A numeric 100*3 matrix giving the 3D coordinates for each point. The configuration was generated as described in Shavit, Hamey and Lio' (2014), as part of an in-silico evaluation.
 }
 \usage{data(conf)}
 

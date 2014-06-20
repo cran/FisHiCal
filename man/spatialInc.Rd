@@ -2,7 +2,7 @@
 \alias{spatialInc}
 \docType{data}
 \title{
-Spatial Inconsistencies detected for loci in fibroblasts chromosome 1
+Spatial inconsistencies detected for loci in fibroblasts chromosome 1
 }
 \description{
 The list of spatial inconsistencies detected by \code{\link{searchInc}} for a fibroblasts chromosome 1.

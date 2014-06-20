@@ -5,7 +5,7 @@
 in-silico 100*100 calibrated Hi-C contact matrix 
 }
 \description{
-Genrated with the function \code{\link{calibrate}} given the in-silico Hi-C contact matrix \code{\link{hic}}. 
+Generated with the function \code{\link{calibrate}} given the in-silico Hi-C contact matrix \code{\link{hic}}. 
 }
 \usage{data(calibHiC)}
 

@@ -30,7 +30,7 @@ prepareData<-function(fish, fishCoord, hic, hicCoord)
       f1 = which(indices == ind1)# matching FISH indices
       for (j in i:un)
       {
-        ind2 = indices[j] 
+        ind2 = uindices[j] 
         if (ind2 > 0)
         {
           freq = as.numeric(hic[ind1, ind2])
@@ -60,7 +60,7 @@ prepareData<-function(fish, fishCoord, hic, hicCoord)
   return(data)
 }
 
-prepareCalib<-function(data, npoints, threshold = NULL, useMax = TRUE, delta = 0.05)
+prepareCalib<-function(data, npoints, threshold = NULL, useMax = TRUE, delta = 0.05, buffer = 1)
 {
   data = data[order(data$distances),]
   xpoints = c()
@@ -91,7 +91,7 @@ prepareCalib<-function(data, npoints, threshold = NULL, useMax = TRUE, delta = 0
     }
     if(useMax)
     {
-      threshold = max(data$distances) + 1
+      threshold = max(data$distances) + buffer
     } 
   }
   params = list(a, b, threshold)
@@ -109,10 +109,29 @@ prepareCalib<-function(data, npoints, threshold = NULL, useMax = TRUE, delta = 0
   return(list("calib" = calib, "fit" = fit))
 }
 
+updateCalib<-function(calib, paramVal, paramIndex)
+{
+  calib$params[[paramIndex]] = paramVal
+  return (calib)
+}
+
 calibrate<-function(hic, calib)
 {
   calibMat = calib$f(hic, calib$params)
   return(calibMat)
+}
+
+getInfoLevelForChr<-function(calibHiC, hicCoord, chr)
+{
+  indices = which(hicCoord$chr == chr)
+  infoLevel = NULL
+  if (length(indices) > 0)
+  {
+    m = calibHiC[indices,indices]
+    ut = m[upper.tri(m, diag = F)]
+    infoLevel = sum(ut > 0)/length(ut)
+  }
+  return(infoLevel)
 }
 
 lsmacof<-function(diss, infD, itermax = 10000, eps = 1e-06, init = NULL, k = 3, 

@@ -2,10 +2,10 @@
 \alias{plotInc}
 
 \title{
-Plot a spatial contradiction
+Plot a spatial inconsistency 
 }
 \description{
-A function to plot a spatial contradiction for a given loci (bin).  
+A function to plot a spatial inconsistency for a given loci (bin).  
 }
 \usage{
 plotInc(i, neighborhoods, label = "fullName", size = 20, interactive = F)
@@ -13,20 +13,20 @@ plotInc(i, neighborhoods, label = "fullName", size = 20, interactive = F)
 
 \arguments{
   \item{i}{
-An integer giving the index of the loci(bin) for which the inconsistency graph should be plotted.
+An integer giving the index of the loci (bin) for which the inconsistency graph should be plotted.
 }
   \item{neighborhoods}{
 The list of spatial inconsistencies detected by \code{\link{searchInc}}.\cr
 'neighborhoods' is a list where neighborhoods[i] gives the neighborhood of i, if a spatial inconsistency was detected for i, and NULL otherwise. Here, the neighborhood of i is the sub-graph of immediate neighbors in trans, an \code{\link{igraph}} object with attributes to label nodes by their name (index), fullName (chromosome name and genomic coordinates), membership (the connected component to which they belong, where i is always assigned with 0) and chr (chromosome name).
 }
   \item{label}{
-A chacrcter vector for labeling the nodes, set to "fullName" by default. Can be one of three options: "name"" (node index), "fullName"" (chromosome name and genomic coordinates) and "chr" (chromosome name). If not one of the above options, then nodes are labelled by their "name" attribute. 
+A character vector for labeling the nodes, set to "fullName" by default. Can be one of three options: "name"" (node index), "fullName"" (chromosome name and genomic coordinates) and "chr" (chromosome name). If not one of the above options, then nodes are labelled by their "name" attribute. 
 }
   \item{size}{
 The size of the nodes in the plot, set to 20 by default. See \code{\link{searchInc}} for more details on plotting options.
 }
   \item{interactive}{
-A Bollean indicating whether the plot should be interactive or not. See \code{\link{searchInc}} for more details on plotting options.
+A Boolean indicating whether the plot should be interactive or not. See \code{\link{searchInc}} for more details on plotting options.
 }
 }
 

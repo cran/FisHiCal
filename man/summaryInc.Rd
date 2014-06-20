@@ -2,7 +2,7 @@
 \alias{summaryInc}
 
 \title{
-Summarize spatial incosistencies. 
+Summarize spatial inconsistencies. 
 }
 \description{
 A function to summarize the details of spatial inconsistencies detected with \code{\link{searchInc}}.
